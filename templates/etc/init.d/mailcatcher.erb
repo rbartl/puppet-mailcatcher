@@ -26,7 +26,7 @@ test -x $DAEMON || exit 0
 
 start_mailcatcher_agent() {
         start-stop-daemon -m -b --start --quiet --pidfile $PIDFILE \
-            --startas $DAEMON -- $NAME -f $DAEMON_OPTS
+            --startas $DAEMON -- $NAME --http-ip 0.0.0.0 -f $DAEMON_OPTS
 }
 
 stop_mailcatcher_agent() {
